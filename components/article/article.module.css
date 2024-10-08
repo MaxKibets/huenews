@@ -1,0 +1,12 @@
+
+.image {
+  position: relative;
+  height: 7rem;
+  width: 7rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.image img {
+  object-fit: cover;
+}
