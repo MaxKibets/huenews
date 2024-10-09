@@ -1,13 +1,15 @@
 import React from "react";
 
+import { getAllNews } from "@/lib/news";
 import NewsList from "@/components/newsList/newsList";
-import { DUMMY_NEWS } from "@/data/dummyNews";
 
 const NewsPage: React.FC = () => {
+  const news = getAllNews();
+
   return (
     <>
       <h1>News Page</h1>
-      <NewsList news={DUMMY_NEWS} />
+      <NewsList news={news} />
     </>
   );
 };

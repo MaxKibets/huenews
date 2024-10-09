@@ -1,0 +1,25 @@
+
+.filterWrap ul {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filterWrap ul a {
+  text-decoration: none;
+  color: #b0b0a6;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.filterWrap ul a:hover,
+.filterWrap ul a.active {
+  color: #e5e5e1;
+}
+
+.filterWrap {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #b0b0a6;
+}

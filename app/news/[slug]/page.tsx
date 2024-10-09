@@ -1,8 +1,8 @@
 import React from "react";
-
-import { DUMMY_NEWS } from "@/data/dummyNews";
-import Acticle from "@/components/article/article";
 import { notFound } from "next/navigation";
+
+import { getAllNews } from "@/lib/news";
+import Acticle from "@/components/article/article";
 
 type NewsDetailPageProps = {
   params: {
@@ -11,7 +11,7 @@ type NewsDetailPageProps = {
 };
 
 const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ params: { slug } }) => {
-  const articleData = DUMMY_NEWS.find((news) => news.slug === slug);
+  const articleData = getAllNews().find((news) => news.slug === slug);
 
   if (!articleData) {
     notFound();

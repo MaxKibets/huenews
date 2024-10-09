@@ -2,17 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import { News } from "@/lib/news";
+
 import css from "./newsList.module.css";
 
-type NewsItem = {
-  id: string;
-  slug: string;
-  image: string;
-  title: string;
-};
-
 type NewsListProps = {
-  news: NewsItem[];
+  news: News[];
 };
 
 const NewsList: React.FC<NewsListProps> = ({ news }) => {
