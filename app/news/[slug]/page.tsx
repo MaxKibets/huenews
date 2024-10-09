@@ -2,6 +2,7 @@ import React from "react";
 
 import { DUMMY_NEWS } from "@/components/newsList/dummyNews";
 import Acticle from "@/components/article/article";
+import { notFound } from "next/navigation";
 
 type NewsDetailPageProps = {
   params: {
@@ -9,16 +10,14 @@ type NewsDetailPageProps = {
   };
 };
 
-const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ params }) => {
-  const newsSlug = params.slug;
-  const newsData = DUMMY_NEWS.find((news) => news.slug === newsSlug) || {
-    image: "",
-    title: "",
-    date: "",
-    content: "",
-  };
+const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ params: { slug } }) => {
+  const articleData = DUMMY_NEWS.find((news) => news.slug === slug);
 
-  return <Acticle {...newsData} />;
+  if (!articleData) {
+    notFound();
+  }
+
+  return <Acticle {...articleData} />;
 };
 
 export default NewsDetailPage;
