@@ -4,7 +4,7 @@
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
 
-.newsList a {
+.link {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,6 +16,10 @@
   padding: 0 0 1rem 0;
 }
 
+.link:hover {
+  background-color: #2d2d2b;
+}
+
 .image {
   position: relative;
   width: 100%;
@@ -25,8 +29,4 @@
 
 .image img {
   object-fit: cover;
-}
-
-.newsList a:hover {
-  background-color: #2d2d2b;
 }

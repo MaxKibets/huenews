@@ -15,7 +15,7 @@ const NewsList: React.FC<NewsListProps> = ({ news }) => {
     <ul className={css.newsList}>
       {news.map(({ id, slug, image, title }) => (
         <li key={id}>
-          <Link href={`/news/${slug}`}>
+          <Link href={`/news/${slug}`} className={css.link}>
             <div className={css.image}>
               <Image src={`/images/news/${image}`} alt={title} fill />
             </div>

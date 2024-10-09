@@ -19,7 +19,9 @@ const ArchiveFilter: React.FC<ArchiveFilterProps> = ({ children, heading, links 
       <ul className={css.list}>
         {links.map(({ href, text }) => (
           <li key={text}>
-            <Link href={href}>{text}</Link>
+            <Link href={href} className={css.link}>
+              {text}
+            </Link>
           </li>
         ))}
       </ul>

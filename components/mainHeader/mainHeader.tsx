@@ -8,11 +8,13 @@ const MainHeader: React.FC = () => {
   return (
     <header className={css.header}>
       <div className={css.logo}>
-        <Link href="/">HueNews</Link>
+        <Link href="/" className={css.link}>
+          HueNews
+        </Link>
       </div>
 
       <nav>
-        <ul>
+        <ul className={css.list}>
           {["/news", "/archive"].map((href) => (
             <NavLink key={href} href={href}>
               {href.slice(1)}

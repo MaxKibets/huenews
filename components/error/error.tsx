@@ -10,7 +10,7 @@ type ErrorProps = {
 const Error: React.FC<ErrorProps> = ({ title, description }) => {
   return (
     <div className={css.error}>
-      <h1>{title}</h1>
+      <h1 className={css.title}>{title}</h1>
       <p>{description}</p>
     </div>
   );

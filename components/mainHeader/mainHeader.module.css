@@ -5,13 +5,13 @@
   margin-bottom: 2rem;
 }
 
-.header .logo a,
-.header .logo a:hover {
+.link,
+.link:hover {
   color: #e1e1d7;
   text-decoration: none;
 }
 
-.header ul {
+.list {
   display: flex;
   gap: 2rem;
   font-weight: bold;
