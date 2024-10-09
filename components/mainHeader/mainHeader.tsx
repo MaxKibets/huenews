@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import css from "./mainHeader.module.css";
+import NavLink from "../navLink/navLink";
 
 const MainHeader: React.FC = () => {
   return (
@@ -12,9 +13,11 @@ const MainHeader: React.FC = () => {
 
       <nav>
         <ul>
-          <li>
-            <Link href="/news">News</Link>
-          </li>
+          {["/news", "/archive"].map((href) => (
+            <NavLink key={href} href={href}>
+              {href.slice(1)}
+            </NavLink>
+          ))}
         </ul>
       </nav>
     </header>

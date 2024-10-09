@@ -1,8 +1,9 @@
 import React from "react";
+import { NextPage } from "next/types";
 
 import Error from "@/components/error/error";
 
-const ArticleNotFoundPage: React.FC = () => {
+const ArticleNotFoundPage: NextPage = () => {
   return (
     <Error
       title="Acrticle Not Found!"

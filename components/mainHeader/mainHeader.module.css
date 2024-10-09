@@ -17,19 +17,6 @@
   font-weight: bold;
 }
 
-.header ul a {
-  text-decoration: none;
-  color: #e5e5e1;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
-.header ul a:hover,
-.header ul a.active {
-  background-color: #bcbcb7;
-  color: #181817;
-}
-
 .logo {
   font-family: 'Inter', sans-serif;
   font-size: 1.5rem;

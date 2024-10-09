@@ -35,6 +35,15 @@ const FilteredNewsPage: React.FC<FilteredNewsPageProps> = ({ params: { filter } 
     text: link,
   }));
 
+  if (
+    (selectedYear && !getAvailableNewsYears().includes(selectedYear)) ||
+    (selectedYear &&
+      selectedMonth &&
+      !getAvailableNewsMonths(selectedYear).includes(selectedMonth))
+  ) {
+    throw new Error("Invalid filter");
+  }
+
   return (
     <ArchiveFilter heading="Arcticles archive page" links={linksData}>
       {news && news.length > 0 ? (

@@ -16,7 +16,7 @@ const ArchiveFilter: React.FC<ArchiveFilterProps> = ({ children, heading, links 
   return (
     <section className={css.filterWrap}>
       <h2>{heading}</h2>
-      <ul>
+      <ul className={css.list}>
         {links.map(({ href, text }) => (
           <li key={text}>
             <Link href={href}>{text}</Link>

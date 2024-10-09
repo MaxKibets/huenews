@@ -1,11 +1,11 @@
 
-.filterWrap ul {
+.list {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
 }
 
-.filterWrap ul a {
+.list a {
   text-decoration: none;
   color: #b0b0a6;
   border-radius: 4px;
@@ -13,8 +13,8 @@
   font-size: 1.25rem;
 }
 
-.filterWrap ul a:hover,
-.filterWrap ul a.active {
+.list a:hover,
+.list a.active {
   color: #e5e5e1;
 }
 

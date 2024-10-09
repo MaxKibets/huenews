@@ -1,9 +1,10 @@
 import React from "react";
+import { NextPage } from "next/types";
 
 import { getAllNews } from "@/lib/news";
 import NewsList from "@/components/newsList/newsList";
 
-const NewsPage: React.FC = () => {
+const NewsPage: NextPage = () => {
   const news = getAllNews();
 
   return (
