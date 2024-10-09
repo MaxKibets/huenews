@@ -2,14 +2,23 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { DUMMY_NEWS } from "./dummyNews";
-
 import css from "./newsList.module.css";
 
-const NewsList: React.FC = () => {
+type NewsItem = {
+  id: string;
+  slug: string;
+  image: string;
+  title: string;
+};
+
+type NewsListProps = {
+  news: NewsItem[];
+};
+
+const NewsList: React.FC<NewsListProps> = ({ news }) => {
   return (
     <ul className={css.newsList}>
-      {DUMMY_NEWS.map(({ id, slug, image, title }) => (
+      {news.map(({ id, slug, image, title }) => (
         <li key={id}>
           <Link href={`/news/${slug}`}>
             <div className={css.image}>

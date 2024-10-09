@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DUMMY_NEWS } from "@/components/newsList/dummyNews";
+import { DUMMY_NEWS } from "@/data/dummyNews";
 import Acticle from "@/components/article/article";
 import { notFound } from "next/navigation";
 
