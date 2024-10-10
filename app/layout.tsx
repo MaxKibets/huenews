@@ -1,6 +1,5 @@
 import React from "react";
-
-import MainHeader from "@/components/mainHeader/mainHeader";
+import { NextPage } from "next/types";
 
 import "./globals.css";
 
@@ -13,15 +12,10 @@ type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+const RootLayout: NextPage<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body>
-        <div className="layout">
-          <MainHeader />
-          {children}
-        </div>
-      </body>
+      <body>{children}</body>
     </html>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import { NextPage } from "next/types";
 
 import { getAllNews } from "@/lib/news";
 import Acticle from "@/components/article/article";
-import { NextPage } from "next/types";
 
 type NewsDetailPageProps = {
   params: {
