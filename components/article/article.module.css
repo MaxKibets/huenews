@@ -1,5 +1,6 @@
 
 .image {
+  display: block;
   position: relative;
   height: 7rem;
   width: 7rem;

@@ -1,22 +1,18 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+import { News } from "@/lib/news";
 
 import css from "./article.module.css";
 
-type ArticleProps = {
-  image: string;
-  title: string;
-  date: string;
-  content: string;
-};
-
-const Article: React.FC<ArticleProps> = ({ image, title, date, content }) => {
+const Article: React.FC<News> = ({ image, title, date, content, slug }) => {
   return (
     <article>
       <div>
-        <div className={css.image}>
+        <Link href={`/news/${slug}/image`} className={css.image}>
           <Image src={`/images/news/${image}`} alt={title} fill />
-        </div>
+        </Link>
         <h1>{title}</h1>
         <time dateTime={date}>{date}</time>
       </div>
