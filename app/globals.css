@@ -62,3 +62,10 @@ ul {
 #home a:hover {
   background-color: #e5e5e1;
 }
+
+
+section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #b0b0a6;
+}

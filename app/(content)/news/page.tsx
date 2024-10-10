@@ -4,8 +4,8 @@ import { NextPage } from "next/types";
 import { getAllNews } from "@/lib/news";
 import NewsList from "@/components/newsList/newsList";
 
-const NewsPage: NextPage = () => {
-  const news = getAllNews();
+const NewsPage: NextPage = async () => {
+  const news = await getAllNews();
 
   return (
     <>

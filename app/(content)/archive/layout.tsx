@@ -9,7 +9,7 @@ const ArchiveLayout: React.FC<ArchiveLayoutProps> = ({ archive, latest }) => {
   return (
     <>
       <h1>News Archive</h1>
-      {archive}
+      <section>{archive}</section>
       {latest}
     </>
   );

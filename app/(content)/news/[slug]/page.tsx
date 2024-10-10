@@ -2,7 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { NextPage } from "next/types";
 
-import { getAllNews } from "@/lib/news";
+import { getNewsItem } from "@/lib/news";
 import Acticle from "@/components/article/article";
 
 type NewsDetailPageProps = {
@@ -11,14 +11,14 @@ type NewsDetailPageProps = {
   };
 };
 
-const NewsDetailPage: NextPage<NewsDetailPageProps> = ({ params: { slug } }) => {
-  const articleData = getAllNews().find((news) => news.slug === slug);
+const NewsDetailPage: NextPage<NewsDetailPageProps> = async ({ params: { slug } }) => {
+  const news = await getNewsItem(slug);
 
-  if (!articleData) {
+  if (!news) {
     notFound();
   }
 
-  return <Acticle {...articleData} />;
+  return <Acticle {...news} />;
 };
 
 export default NewsDetailPage;

@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { getAllNews } from "@/lib/news";
+import { getNewsItem } from "@/lib/news";
 import Modal from "@/components/modal/modal";
 
 type InterceptedImagePageProps = {
@@ -12,10 +12,10 @@ type InterceptedImagePageProps = {
   };
 };
 
-const InterceptedImagePage: NextPage<InterceptedImagePageProps> = ({
+const InterceptedImagePage: NextPage<InterceptedImagePageProps> = async ({
   params: { slug },
 }) => {
-  const articleData = getAllNews().find((news) => news.slug === slug);
+  const articleData = await getNewsItem(slug);
 
   if (!articleData) {
     notFound();

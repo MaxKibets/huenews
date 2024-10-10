@@ -1,32 +1,52 @@
 import React from "react";
 import Link from "next/link";
 
+import { getAvailableNewsMonths, getAvailableNewsYears } from "@/lib/news";
+
 import css from "./archiveFilter.module.css";
 
 type ArchiveFilterProps = {
-  heading: string;
-  links: {
-    href: string;
-    text: string;
-  }[];
-  children: React.ReactNode;
+  year: string | undefined;
+  month: string | undefined;
 };
 
-const ArchiveFilter: React.FC<ArchiveFilterProps> = ({ children, heading, links }) => {
+const ArchiveFilter: React.FC<ArchiveFilterProps> = async ({ year, month }) => {
+  const availableYears = await getAvailableNewsYears();
+  const availableNewsMonths = year ? await getAvailableNewsMonths(year) : [];
+
+  if (
+    (year && !availableYears.includes(year)) ||
+    (month && !availableNewsMonths.includes(month))
+  ) {
+    throw new Error("Invalid filter");
+  }
+
+  let links = availableYears;
+
+  if (year && !month) {
+    links = availableNewsMonths;
+  }
+
+  if (year && month) {
+    links = [];
+  }
+
   return (
-    <section className={css.filterWrap}>
-      <h2>{heading}</h2>
+    <>
+      <h2>Arcticles archive page</h2>
       <ul className={css.list}>
-        {links.map(({ href, text }) => (
-          <li key={text}>
-            <Link href={href} className={css.link}>
-              {text}
+        {links.map((link: string) => (
+          <li key={link}>
+            <Link
+              href={year ? `/archive/${year}/${link}` : `/archive/${link}`}
+              className={css.link}
+            >
+              {link}
             </Link>
           </li>
         ))}
       </ul>
-      {children}
-    </section>
+    </>
   );
 };
 
